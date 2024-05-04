@@ -1,3 +1,33 @@
+{% extends 'shopping/base.html' %}
 {% load static %}
 
-<link rel="stylesheet"  href="{% static 'css/main.css' %}" type="text/css" />
+{% block page_content %}
+<div class="row">
+    <div class="col-lg-4">
+        <div class="box-element product">
+            <img class="thumbnail" src="{% static 'images/unreal.png' %}" alt="product image" />
+            <hr>
+            <h4 class="text-center">Product</h4>
+
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <img class="thumbnail" src="{% static 'images/unreal.png' %}" alt="product image" />
+        <div class="box-element product">
+            <hr>
+            <h4 class="text-center b">Product</h4>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="box-element product">
+            <img class="thumbnail" src="{% static 'images/unreal.png' %}" alt="product image" />
+            <hr>
+            <h4 class="text-center">Product</h4>
+        </div>
+    </div>
+</div>
+
+{% endblock page_content %}
+
