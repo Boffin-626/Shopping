@@ -2,8 +2,49 @@
 {% load static %}
 
 {% block page_content %}
-<h3> Shopping Cart </h3>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="box-element">
+                <a class="btn btn-outline-dark" href="{% url 'store' %}">&#x2190; Continue Shopping</a>
 
-<img src="{% static 'images/cart.jpeg' %}" alt="shopping cart image" />
+                <hr>
+                <table>
+                    <th><h5>Items: <b>3</b></h5></th>
+                    <th><h5>Total: <b>R6000</b></h5></th>
+                    <th>
+                        <a style="float: right;" 
+                        class="btn btn-success"
+                        href="{% url 'checkout' %}">Check Out &#8594;</a>
+                    </th>
+                </table>
+            </div>
+
+            <br>
+
+            <div class="box-element">
+                <div class="cart-row">
+                    <div style="flex: 2;"></div>
+                    <div style="flex: 2;">Item</div>
+                    <div style="flex: 2;">Price</div>
+                    <div style="flex: 2;">Quantity</div>
+                    <div style="flex: 2;">Total</div>
+                </div>
+
+                <div class="cart-row">
+                    <div style="flex: 2;"><img class="row-image" src="{% static 'images/unreal.png' %}"></div>
+                    <div style="flex: 2;">Product 1</div>
+                    <div style="flex: 2;">R2000</div>
+                    <div style="flex: 2;">
+                        <p class="quantity">3</p>
+                        <div class="quantity">
+                            <img class="chg-quantity" src="{% static 'images/arrow-up.png' %}">
+                            <img class="chg-quantity" src="{% static 'images/arrow-down.png' %}">
+                        </div>
+                    </div>
+                    <div style="flex: 2;">R6000</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 {% endblock page_content %}
