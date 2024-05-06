@@ -3,38 +3,20 @@
 
 {% block page_content %}
 <div class="row">
-    <div class="col-lg-4">
-        <img class="thumbnail" src="{% static 'images/unreal.png' %}" alt="product image" />
-        <div class="box-element product">
-            <h4 class="text-center">Product</h4>
-            <hr>
-            <button class="btn btn-outline-secondary" href="#">Add to Cart</button>
-            <a class="btn btn-outline-success" href="#">View</a>
-            <h4 style="display: inline-block; float: right;">R1000</h4>
+    {% for product in products %}
+        <div class="col-lg-4">
+            <img class="thumbnail" src="{% static 'images/unreal.png' %}" alt="product image" />
+            <div class="box-element product">
+                <h4 class="text-center"> {{product.name}} </h4>
+                <hr>
+                <button class="btn btn-outline-secondary" href="#">Add to Cart</button>
+                <a class="btn btn-outline-success" href="#">View</a>
+                <h4 style="display: inline-block; float: right;"> R{{product.price | floatformat:2}} </h4>
+            </div>
         </div>
-    </div>
-
-    <div class="col-lg-4">
-        <img class="thumbnail" src="{% static 'images/unreal.png' %}" alt="product image" />
-        <div class="box-element product">
-            <h4 class="text-center b">Product</h4>
-            <hr>
-            <button class="btn btn-outline-secondary" href="#">Add to Cart</button>
-            <a class="btn btn-outline-success" href="#">View</a>
-            <h4 style="display: inline-block; float: right;">R2000</h4>
-        </div>
-    </div>
-
-    <div class="col-lg-4">
-        <img class="thumbnail" src="{% static 'images/unreal.png' %}" alt="product image" />
-        <div class="box-element product">
-            <h4 class="text-center">Product</h4>
-            <hr>
-            <button class="btn btn-outline-secondary" href="#">Add to Cart</button>
-            <a class="btn btn-outline-success" href="#">View</a>
-            <h4 style="display: inline-block; float: right;">R3000</h4>
-    </div>
+    {% endfor %}
 </div>
 
 {% endblock page_content %}
+
 
