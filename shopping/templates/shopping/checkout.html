@@ -127,6 +127,25 @@
             userFormData.email = form.email.value 
         }
 
+        var url = '/process_order/'
+        fetch(url, {
+            method: 'POST',
+            headers = {
+                'content-Type':'application/json',
+                'X_CSRFToken': csrftoken,
+            },
+            body:JSON.stringify ({
+                'form': userFormData, 
+                'shipping': shippingInfo
+            })
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('Success:', data)
+            alert('Transaction completed')
+            window.location.href = "{% url 'store' %}"
+        })
+
     }
 
 </script>
